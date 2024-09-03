@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import auth, { database } from "./firebaseSetup"
 import { onAuthStateChanged } from 'firebase/auth';
 import LogIn from './components/LogIn';
-import { onChildAdded, onValue, ref } from 'firebase/database';
+import { onChildAdded, onValue, ref, remove } from 'firebase/database';
 
 function App() {
   const [addJobOpen, setAddJobOpen] = useState(false)
@@ -41,6 +41,16 @@ function App() {
     setAddJobOpen(false)
   }
 
+  const handleJobDelete = (jobID) => {
+    remove(ref(database, 'users/' + user.uid + "/jobs/" + jobID))
+      .then(() => {
+        setJobs(prevJobs => prevJobs.filter(job => job.jobID !== jobID));
+        console.log("Job deleted successfully");
+      })
+      .catch((error) => {
+        console.error("Error deleting job:", error);
+      });
+  };
 
   return (
     <>
@@ -53,7 +63,7 @@ function App() {
 
           <div className='jobs'>
             {jobs.map((job) => {
-              return <JobArea {...job} />
+              return <JobArea {...job} handleDelete={handleJobDelete} />
             })}
           </div>
         </div>
