@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/jobtrack/static/css/main.c0646871.css",
+    "main.js": "/jobtrack/static/js/main.59bc6dab.js",
+    "static/js/453.175a42f4.chunk.js": "/jobtrack/static/js/453.175a42f4.chunk.js",
+    "static/media/edit.png": "/jobtrack/static/media/edit.9fd71c55ed5fcd516d44.png",
+    "static/media/megaphone.png": "/jobtrack/static/media/megaphone.fbc097cfa45db87480de.png",
+    "static/media/trash-xmark.png": "/jobtrack/static/media/trash-xmark.b1d84dc79bb9aae5fc55.png",
+    "index.html": "/jobtrack/index.html",
+    "main.c0646871.css.map": "/jobtrack/static/css/main.c0646871.css.map",
+    "main.59bc6dab.js.map": "/jobtrack/static/js/main.59bc6dab.js.map",
+    "453.175a42f4.chunk.js.map": "/jobtrack/static/js/453.175a42f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0646871.css",
+    "static/js/main.59bc6dab.js"
+  ]
+}
