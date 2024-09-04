@@ -52,6 +52,17 @@ function App() {
       });
   };
 
+   const handleLogOut = () => {
+    auth.signOut()
+      .then(() => {
+        setUser(null);
+        setJobs([]);
+      })
+      .catch((error) => {
+        console.error("Error logging out:", error);
+      });
+  };
+
   return (
     <>
       {user ? (<>
@@ -59,6 +70,7 @@ function App() {
           <div className="header">
             <h1>JobTracker</h1>
             <button onClick={handleJobAddClick}>+</button>
+            <button onClick = {handleLogOut}>Log out</button>
           </div>
 
           <div className='jobs'>
